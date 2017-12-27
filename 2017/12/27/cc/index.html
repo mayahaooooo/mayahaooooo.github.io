@@ -86,15 +86,15 @@
 <meta property="og:site_name" content="启迪">
 <meta property="og:description" content="SSM各层初浅理解  Dao：持久层 对数据库进行操作   Service: 业务层 把数据 经过—复杂的业务流程处理–   Controller: 控制层 用户请求后–把经过业务处理的结果–反馈给用户   快速入手ssm教程前言（一个粗糙但对刚了解ssm有用的文档）  本人萌新 学习自 慕课网大佬的视频 写的只是个人初步的理解 目的：新手如何快速成功的搭建一个ssm 项目 需要理论知识的请查看其">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="file:///resources/目录.png">
-<meta property="og:image" content="file:///resources/createTest.png">
-<meta property="og:image" content="file:///resources/runTest.png">
-<meta property="og:image" content="file:///resources/testResult.png">
-<meta property="og:updated_time" content="2017-12-27T06:12:55.602Z">
+<meta property="og:image" content="file:///cc/目录.png">
+<meta property="og:image" content="file:///cc/createTest.png">
+<meta property="og:image" content="file:///cc/runTest.png">
+<meta property="og:image" content="file:///cc/testResult.png">
+<meta property="og:updated_time" content="2017-12-27T06:35:01.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cc">
 <meta name="twitter:description" content="SSM各层初浅理解  Dao：持久层 对数据库进行操作   Service: 业务层 把数据 经过—复杂的业务流程处理–   Controller: 控制层 用户请求后–把经过业务处理的结果–反馈给用户   快速入手ssm教程前言（一个粗糙但对刚了解ssm有用的文档）  本人萌新 学习自 慕课网大佬的视频 写的只是个人初步的理解 目的：新手如何快速成功的搭建一个ssm 项目 需要理论知识的请查看其">
-<meta name="twitter:image" content="file:///resources/目录.png">
+<meta name="twitter:image" content="file:///cc/目录.png">
 
 
 
@@ -384,7 +384,7 @@
 <li><p><strong>jdbc.properties</strong><br><code>初始化数据库连接配置</code></p>
 </li>
 <li><p><strong>log4j.properties</strong><br><code>配置日志</code></p>
-<p><a href="#markdown-pane"><strong>资源结构目录</strong></a><br><img src="file:resources/目录.png" alt=""></p>
+<p><a href="#markdown-pane"><strong>资源结构目录</strong></a><br><img src="file:cc/目录.png" alt=""></p>
 </li>
 </ul>
 <p><strong>三. DAO 实现</strong></p>
@@ -440,14 +440,14 @@
 <li><strong>10. 创建测试类 测试</strong></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用快捷键 command+shift+T 创建测试类</span><br></pre></td></tr></table></figure>
-<p><img src="file:resources/createTest.png" alt=""></p>
+<p><img src="file:cc/createTest.png" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//注意记得添加一下注解</span><br><span class="line">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="line">@ContextConfiguration(&#123;&quot;classpath:spring/spring-dao.xml&quot;&#125;)</span><br></pre></td></tr></table></figure>
 <p>Test类代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="line">@ContextConfiguration(&#123;&quot;classpath:spring/spring-dao.xml&quot;&#125;)</span><br><span class="line">public class UserInfoDao2Test &#123;</span><br><span class="line"></span><br><span class="line">    @Resource</span><br><span class="line">    UserInfoDao userInfoDao;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void insertUserInfo() throws Exception &#123;</span><br><span class="line"></span><br><span class="line">        Map&lt;String,Object&gt;  map = new HashMap&lt;String,Object&gt;();</span><br><span class="line">        map.put(&quot;account&quot;,&quot;ali&quot;);</span><br><span class="line">        map.put(&quot;pas&quot;,&quot;123&quot;);</span><br><span class="line">        int result = userInfoDao.insertUserInfo(map);</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;result==&quot;+result);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    public void login() throws Exception &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>跑起来</p>
-<p><img src="file:resources/runTest.png" alt=""></p>
+<p><img src="file:cc/runTest.png" alt=""></p>
 <p>结果</p>
-<p><img src="file:resources/testResult.png" alt=""></p>
+<p><img src="file:cc/testResult.png" alt=""></p>
 <p><strong>当返回结果为1 的时候就代表，数据已经插入数据库</strong></p>
 <h2 id="自此DAO使用mybatis搭建成功"><a href="#自此DAO使用mybatis搭建成功" class="headerlink" title="自此DAO使用mybatis搭建成功"></a>自此DAO使用mybatis搭建成功</h2><hr>
 
@@ -483,6 +483,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/27/test/" rel="prev" title="test">
+                test <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -563,7 +567,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
